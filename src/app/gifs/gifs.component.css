@@ -1,0 +1,81 @@
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+  
+.gif {
+  position: relative;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+  
+p.name {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0, 0.8);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    max-width: 80%;
+    padding: 10px;
+  }
+
+  .gif:hover p {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.gifs {
+    column-count: 4;
+    column-gap: 10px;
+  }
+  .gif {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+  .gif > img {
+    grid-row: 1 / -1;
+    grid-column: 1;
+  }
+
+  .gif button {
+    grid-row: 2;
+    grid-column: 1;
+    background-color: rgba(255,255,255,.5);
+    padding: .2em .5em;
+    justify-self: start;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    border: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  @media  (max-width:767px) {
+    .gifs {
+      column-count: 2;
+    }
+  }
+
+  @media  (max-width:500px) {
+    .gifs {
+      column-count: 1;
+    }
+  }

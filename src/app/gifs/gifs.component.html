@@ -1,0 +1,12 @@
+<div class="search">
+    <input type="text" placeholder="search..." #gif (keyup.enter)="search(gif.value)">
+</div>
+
+<div class="gifs">
+    <div class="gif" *ngFor="let gif of gifs">
+        <img [src]="gif.images.downsized.url" alt="gif.title" />
+        <p class="name">{{gif.title}}</p>
+        <button (click) = "saveData(gif.images.downsized.url, gif.title)">Save</button>
+        
+    </div>
+</div>

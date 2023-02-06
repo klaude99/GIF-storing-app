@@ -1,0 +1,22 @@
+<div class="storedsearch">
+    <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term" />
+    <div class="sort-c">
+        <button class="sort" (click) = "sortAsc()">sortAsc</button>
+        <button class="sort" (click) = "sortDsc()">sortDsc</button>
+    </div>
+</div>
+
+<div class="gifsstored">
+    {{loadData()}}
+
+    <div *ngFor="let gifStore of gifStored | filter:term; let i = index">
+
+            <img [src]="gifStore.url" alt="gifStore.title" />
+            <p class="name">{{gifStore.title}}</p>
+            <img class="downloadicon" src="assets/download.ico" (click) = "download(gifStore.url)" />
+            <button class="delete" (click) = "deleteData(gifStore.url)">Delete</button>
+
+    </div>
+
+</div>
+
